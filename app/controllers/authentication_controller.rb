@@ -7,6 +7,10 @@ class AuthenticationController < ApplicationController
     json_response(auth_token: auth_token)
   end
 
+  def logout
+    json_response(message: "Not Implemented")
+  end
+
   private
 
   def auth_params
