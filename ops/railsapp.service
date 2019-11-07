@@ -8,7 +8,7 @@ PIDFile=/opt/app/todos-api/tmp/pids/puma.pid
 User=railsapp
 Type=forking
 WorkingDirectory=/opt/app
-ExecStart=/opt/app/bin/bundle exec puma
+ExecStart=/opt/app/bin/bundle exec puma -c config/puma.rb -E production -D
 Restart=on-failure
 
 [Install]
