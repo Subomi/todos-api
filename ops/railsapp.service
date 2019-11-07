@@ -4,11 +4,11 @@ After=network.target
 
 [Service]
 Environment="GEM_HOME=/opt/gem"
-PIDFile=/opt/app/todos-api/tmp/pids/puma.pid
+PIDFile=/opt/app/tmp/pids/puma.pid
 User=railsapp
 Type=forking
 WorkingDirectory=/opt/app
-ExecStart=/opt/app/bin/bundle exec puma -C config/puma.rb -e production -d
+ExecStart=/opt/app/bin/bundle exec puma -e production -d
 Restart=on-failure
 
 [Install]
