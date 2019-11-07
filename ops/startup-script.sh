@@ -10,7 +10,7 @@ ssh-add ~/.ssh/id_rsa
 
 # Get source code
 rm -rf /opt/app
-mkdir opt/app
+mkdir /opt/app
 
 git clone git@github.com:Subomi/todos-api.git /opt/app -b master
 
