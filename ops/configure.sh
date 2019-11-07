@@ -35,6 +35,10 @@ systemctl start redis-server.service
 cat default-nginx > /etc/nginx/sites-available/default
 systemctl restart nginx.service
 
+mkdir /opt/app/tmp/cache
+mkdir /opt/app/tmp/pids
+mkdir /opt/app/tmp/sockets
+
 cat railsapp.service > /lib/systemd/system/railsapp.service
 systemctl enable railsapp.service
 systemctl start railsapp.service
