@@ -14,4 +14,4 @@ mkdir /opt/app
 
 git clone git@github.com:Subomi/todos-api.git /opt/app -b master
 
-opt/app/todos-api/ops/configure.sh
+/opt/app/ops/configure.sh
