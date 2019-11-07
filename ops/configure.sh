@@ -28,7 +28,6 @@ mkdir /opt/gem
 chown -R railsapp:railsapp /opt/gem
 
 sudo -u railsapp -H bundle install --path /opt/gem
-sudo -u railsapp -H bundle exec rake assets:precompile
 
 systemctl enable redis-server.service
 systemctl start redis-server.service
