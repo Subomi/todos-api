@@ -11,4 +11,4 @@ ssh-add ~/.ssh/id_rsa
 # Get source code
 git clone git@github.com:Subomi/todos-api.git /opt/app -b master
 
-./configure.sh
+opt/app/todos-api/ops/configure.sh
