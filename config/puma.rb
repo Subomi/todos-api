@@ -7,6 +7,10 @@
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
 threads threads_count, threads_count
 
+# App dir
+app_dir = File.expand_path("../..", __FILE__)
+tmp_dir = "#{app_dir}/tmp"
+
 # Specifies the `port` that Puma will listen on to receive requests, default is 3000.
 #
 port        ENV.fetch("PORT") { 3000 }
@@ -22,6 +26,8 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # processes).
 #
 # workers ENV.fetch("WEB_CONCURRENCY") { 2 }
+
+pidfile "#{tmp_dir}/pids/puma.pid"
 
 # Use the `preload_app!` method when specifying a `workers` number.
 # This directive tells Puma to first boot the application and load code
