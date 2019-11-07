@@ -21,6 +21,9 @@ apt-get install -y git ruby ruby-dev build-essential libxml2-dev zlib1g-dev ngin
 
 gem install bundler --no-ri --no-rdoc
 
+useradd -m railsapp
+chown -R railsapp:railsapp /opt/app
+
 mkdir /opt/gem
 chown -R railsapp:railsapp /opt/gem
 
