@@ -23,3 +23,7 @@
 
 # Ignore Coveralls local results data
 coverage/
+
+# Vim files
+*.swp
+*.swo
