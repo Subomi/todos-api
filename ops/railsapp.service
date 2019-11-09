@@ -6,9 +6,9 @@ After=network.target
 Environment="GEM_HOME=/opt/gem"
 PIDFile=/opt/app/tmp/pids/puma.pid
 User=railsapp
-Type=forking
+Type=simple
 WorkingDirectory=/opt/app
-ExecStart=/opt/app/bin/bundle exec puma -e production -d
+ExecStart=/opt/app/bin/bundle exec puma -e production
 Restart=on-failure
 
 [Install]

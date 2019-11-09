@@ -26,8 +26,17 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # processes).
 #
 # workers ENV.fetch("WEB_CONCURRENCY") { 2 }
+#
 
+# Set up socket for performance boost in production
+bind "unix://#{tmp_dir}/sockets/puma.sock"
+
+# Logging
+stdout_redirect "log/puma.stdout.log", "log/puma.stderr.log", true
+
+# Set master PID and state locations
 pidfile "#{tmp_dir}/pids/puma.pid"
+state_path "#{tmp_dir}/pids/puma.state"
 
 # Use the `preload_app!` method when specifying a `workers` number.
 # This directive tells Puma to first boot the application and load code
@@ -36,7 +45,7 @@ pidfile "#{tmp_dir}/pids/puma.pid"
 # you need to make sure to reconnect any threads in the `on_worker_boot`
 # block.
 #
-# preload_app!
+preload_app!
 
 # The code in the `on_worker_boot` will be called if you are using
 # clustered mode by specifying a number of `workers`. After each worker
