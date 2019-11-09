@@ -10,6 +10,10 @@ end
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+# Postgres for Production.
+gem 'pg'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -21,7 +25,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'will_paginate', '~> 3.1.0'
-gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
