@@ -12,7 +12,7 @@ gem 'rails', '~> 5.0.1'
 gem 'sqlite3'
 
 # Postgres for Production.
-gem 'pg'
+gem 'pg', '~> 0.21'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
