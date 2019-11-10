@@ -17,7 +17,7 @@ service google-fluentd restart &
 
 # Install dependencies from apt
 apt-get update
-apt-get install -y git ruby ruby-dev build-essential libxml2-dev zlib1g-dev nginx libmysqlclient-dev libsqlite3-dev redis-server
+apt-get install -y git ruby ruby-dev build-essential libxml2-dev zlib1g-dev nginx libmysqlclient-dev libsqlite3-dev libpq-dev redis-server
 
 gem install bundler --no-ri --no-rdoc
 
