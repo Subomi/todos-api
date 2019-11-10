@@ -2,7 +2,7 @@ set -e
 
 # Talk to the metadata server to get the project id
 PROJECTID=$(curl -s "http://metadata.google.internal/computeMetadata/v1/project/project-id" -H "Metadata-Flavor: Google")
-SECRET_KEY_BASE=$(curl -s "http://metadata.google.internal/computeMetadata/v1/project/secret-key-base" -H "Metadata-Flavor: Google")
+SECRET_KEY_BASE=$(curl -s "http://metadata.google.internal/computeMetadata/v1/instance/attributes/secret-key-base" -H "Metadata-Flavor: Google")
 REPO_NAME="todos-api"
 
 # TODO: ssh things.
