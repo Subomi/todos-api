@@ -39,6 +39,8 @@ mkdir /opt/app/tmp/cache
 mkdir /opt/app/tmp/pids
 mkdir /opt/app/tmp/sockets
 
+chmod -R a+rw /opt/app/tmp/
+
 cat railsapp.service > /lib/systemd/system/railsapp.service
 systemctl enable railsapp.service
 systemctl start railsapp.service
