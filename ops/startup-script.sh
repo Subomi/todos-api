@@ -4,6 +4,12 @@ set -e
 PROJECTID=$(curl -s "http://metadata.google.internal/computeMetadata/v1/project/project-id" -H "Metadata-Flavor: Google")
 SECRET_KEY_BASE=$(curl -s "http://metadata.google.internal/computeMetadata/v1/instance/attributes/secret-key-base" -H "Metadata-Flavor: Google")
 REPO_NAME="todos-api"
+env_key=SECRET_KEY_BASE
+env_file=/etc/profile
+
+temp_cmd="export $env_key=$SECRET_KEY_BASE"
+perm_cmd="grep -q -F '$temp_cmd' $env_file || echo '$temp_cmd' >> $env_file"
+eval $perm_cmd
 
 # TODO: ssh things.
 eval "$(ssh-agent)"
